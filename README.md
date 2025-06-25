@@ -1,5 +1,7 @@
+```
 //CAJERO AUTOMÁTICO DOLPHINBANK
 //Juan Quintero y Bryan Garcés
+
 #include <iostream>     // Entrada y salida
 #include <cstdio>       // Archivos binarios
 #include <cstring>      // Cadenas char[]
@@ -64,9 +66,10 @@ void leerTitular(char* destino, int maxTam) {
 
 
 //Validación para evitar cuentas duplicadas
+
 bool existeCuenta(int numero){
-	FILE* fichero= fopen("cuentas.dat", "rb");//Abre el archivo en modo lectura
-	if(fichero == NULL) return false;
+	FILE* fichero= fopen("cuentas.dat", "rb"); //Abre el archivo en modo lectura
+	if (fichero == NULL) return false;
 	Cuenta c;
 	//Mientras siga habiendo alguna cuenta en el archivo, verifique si los números coinciden
 	while (fread(&c, sizeof(Cuenta), 1, fichero) == 1) {
